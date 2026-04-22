@@ -8,20 +8,14 @@ from marshmallow import Schema, fields, ValidationError
 import google.cloud.logging
 from google.cloud.logging.handlers import CloudLoggingHandler
 load_dotenv()
-
 from ml.queue_model import get_queue_predictions
 from graph_engine.router import get_optimal_path
 from ml.exit_predictor import get_exit_predictions
 from ml.ai_announcer import generate_crowd_announcement
 from ml.match_data import fetch_live_match_data
-
 import random
-
-# Configure standard logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
-
-# Initialize Google Cloud Logging
 try:
     client = google.cloud.logging.Client()
     handler = CloudLoggingHandler(client)
@@ -29,13 +23,8 @@ try:
     logger.info("Stardium: Google Cloud Logging initialized.")
 except Exception as e:
     logger.warning(f"Google Cloud Logging: Running in local simulation mode. {e}")
-
 app = Flask(__name__, static_folder='static')
-
-# Restrict CORS to specific API paths to improve security
 CORS(app, resources={r"/api/*": {"origins": "*"}})
-
-# Enhanced Security: Content Security Policy
 csp = {
     'default-src': "'self'",
     'img-src': ["*", "data:", "https://*.googleapis.com", "https://*.gstatic.com"],
@@ -45,14 +34,12 @@ csp = {
     'font-src': ["'self'", "https://fonts.gstatic.com"],
     'frame-src': ["'self'", "https://www.google.com"],
 }
-
 Talisman(app, 
          content_security_policy=csp, 
          force_https=False, 
          strict_transport_security=True,
          session_cookie_secure=True,
          session_cookie_http_only=True)
-
 class NavigationSchema(Schema):
     start = fields.Str(required=True)
     end = fields.Str(required=True)
@@ -117,10 +104,8 @@ def navigate():
         data = schema.load(request.json)
     except ValidationError as err:
         return jsonify({"status": "error", "errors": err.messages}), 400
-    
     start = data.get('start')
     end = data.get('end')
-    
     try:
         path, total_weight, earned_points = get_optimal_path(start, end)
         return jsonify({
@@ -163,7 +148,6 @@ def announcements():
         density = random.randint(10, 100)
         status = 'crowded' if density > 80 else 'free' if density < 30 else 'moderate'
         heatmap_data.append({"sector": s, "status": status})
-    
     try:
         announcement = generate_crowd_announcement(heatmap_data)
         return jsonify({"status": "success", "data": announcement})
@@ -183,7 +167,6 @@ def live_scores():
     except Exception as e:
         logger.error(f"Error in /api/live-scores: {e}", exc_info=True)
         return jsonify({"status": "error", "message": "Live score retrieval failed"}), 500
-
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port, debug=False)
