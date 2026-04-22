@@ -1,6 +1,5 @@
 import random
 from typing import List, Dict, Any
-
 def get_exit_predictions() -> List[Dict[str, Any]]:
     """
     Simulates a heuristic time-series model predicting congestion at stadium exits.
