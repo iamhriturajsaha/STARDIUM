@@ -24,8 +24,6 @@ def generate_crowd_announcement(heatmap_data):
         )
         response = model.generate_content(prompt)
         announcement_text = response.text.strip()
-        
-        # Google Service: Cloud Translation for Multilingual Accessibility
         translations = {}
         try:
             translate_client = translate.Client()
@@ -35,7 +33,6 @@ def generate_crowd_announcement(heatmap_data):
         except Exception as te:
             print(f"Translation service unavailable: {te}")
             translations = {"es": "Traducción no disponible", "fr": "Traduction non disponible"}
-
         return {
             "announcement": announcement_text,
             "translations": translations,
