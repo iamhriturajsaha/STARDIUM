@@ -50,7 +50,6 @@ cd Backend
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
-# Enter your GOOGLE_API_KEY in the .env file
 python app.py
 ```
 
