@@ -2,20 +2,15 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import StadiumBackground from './components/StadiumBackground';
 import './index.css';
-
-// Efficiency Improvement: Code Splitting & Lazy Loading (Optimal resource usage)
 const Dashboard = lazy(() => import('./components/Dashboard'));
 const LandingPage = lazy(() => import('./components/LandingPage'));
 const AuthGateway = lazy(() => import('./components/AuthGateway'));
 const InfoPage = lazy(() => import('./components/InfoPage'));
-
-// Loading component for Suspense
 const Loader = () => (
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', background: 'var(--bg-deep)', color: 'var(--primary)', fontFamily: 'var(--font-header)' }}>
     INITIALIZING INTELLIGENCE MATRIX...
   </div>
 );
-
 function App() {
   return (
     <Router>
@@ -39,5 +34,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
