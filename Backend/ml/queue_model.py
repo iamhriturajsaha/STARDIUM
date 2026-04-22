@@ -3,7 +3,6 @@ import numpy as np
 import random
 from typing import List, Dict, Any
 from sklearn.ensemble import RandomForestRegressor as RF
-
 def train_model() -> RF:
     """
     Trains a Random Forest regressor on synthetic crowd density data.
