@@ -2,7 +2,7 @@
 
 Stardium is an AI-powered commander designed for elite sporting events. It leverages the Google Cloud Ecosystem to provide real-time telemetry, authoritative AI redirects and secure fan engagement.
 
-📄 Google Cloud Run Link - https://stardium-805504669798.us-central1.run.app
+📄 Google Cloud Run Link - https://stardium-service-805504669798.us-central1.run.app
 
 ## 🌌 Quick Glance
 <p align="center">
