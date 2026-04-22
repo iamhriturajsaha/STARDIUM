@@ -32,7 +32,7 @@ csp = {
     'style-src': ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
     'connect-src': ["'self'", "http://localhost:8080", "http://localhost:5173", "https://*.googleapis.com"],
     'font-src': ["'self'", "https://fonts.gstatic.com"],
-    'frame-src': ["'self'", "https://www.google.com"],
+    'frame-src': ["'self'", "https://www.google.com", "https://maps.google.com"],
 }
 Talisman(app, 
          content_security_policy=csp, 
