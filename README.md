@@ -67,7 +67,7 @@ Building a real-time Venue OS presented several complex engineering challenges -
 2.  **Inconsistent API Telemetry** - Live match data from external providers often lacks critical labels (like "Home" vs "Away") during the "Scheduled" phase. We developed a robust heuristic parsing layer to ensure high-fidelity UI rendering regardless of API quality.
 3.  **Real-Time Sync at Scale** - Synchronizing fan sentiment data from Firebase RTDB with sub-millisecond latency while maintaining low overhead on the client-side required optimized listeners and selective state updates.
 4.  **UI/UX Precision** - Balancing high-intensity cyberpunk aesthetics with perfect data alignment (e.g., the scoreboard optics) required custom CSS grid architectures and monospaced font treatments.
-
+   
 ## 🚀 Future Roadmap
 - **Multi-Stadium Swarm** - Orchestrate multiple venue dashboards from a single global HQ.
 - **Gemini Pro Vision** - Integrate live CCTV streams for real-time AI visual crowd counting.
