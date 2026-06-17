@@ -10,7 +10,7 @@ WORKDIR /app/frontend
 
 # Install dependencies first (layer cache optimization)
 COPY Frontend/package*.json ./
-RUN npm ci
+RUN npm install --legacy-peer-deps
 
 # Copy source and build
 COPY Frontend/ .
