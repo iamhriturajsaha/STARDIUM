@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+*.egg-info/
+dist/
+build/
+*.so
+
+# Environment secrets - NEVER commit these
+.env
+.env.local
+.env.*.local
+Backend/.env
+
+# Node / Frontend
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.cache/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+
+# ML model artifacts (if large)
+*.pkl
+*.joblib
+*.h5
+
+# Test coverage
+.coverage
+htmlcov/
