@@ -20,9 +20,9 @@ Stardium is an AI-powered commander designed for elite sporting events. It lever
   <img src="Images/12.png" alt="12" width="1000"/><br>
 </p>
 
-## 🌌 Advanced Google Cloud Integration
-Stardium demonstrates deep adoption across the Google Ecosystem -
-- **🤖 Google Gemini 1.5 Flash** - Orchestrates real-time crowd management announcements based on complex sector telemetry.
+## 🌌 Advanced Cloud Integration
+Stardium demonstrates deep adoption across modern cloud ecosystems -
+- **🤖 OpenAI GPT** - Orchestrates real-time crowd management announcements based on complex sector telemetry.
 - **🔥 Firebase Realtime Database** - Powers the "Live Fan Sentiment" tracking system with sub-millisecond data synchronization.
 - **🆔 Google Identity Services** - Native One Tap Auth integration providing a seamless, secure entry experience.
 - **📊 Google Cloud Operations** - Integrated Cloud Logging SDK for professional backend observability and audit trails.
@@ -37,7 +37,7 @@ Stardium demonstrates deep adoption across the Google Ecosystem -
 | Category | Technology |
 | :--- | :--- |
 | **Foundations** | React 19, Python 3.11, Vite |
-| **Data & Cloud** | **Firebase RTDB**, **Google Cloud Logging**, **Gemini API** |
+| **Data & Cloud** | **Firebase RTDB**, **Google Cloud Logging**, **OpenAI API** |
 | **Logic** | NetworkX, NumPy, Marshmallow |
 | **Security** | **Google Identity**, Talisman, Gunicorn |
 | **Efficiency** | **Vite PWA**, Skeleton Loaders, React.lazy |
@@ -59,6 +59,23 @@ cd Frontend
 npm install --legacy-peer-deps 
 npm run dev
 ```
+
+### 🚀 Production Deployment (Render)
+Stardium is configured for single-instance, multi-stage deployment using Docker.
+
+1. Create a new **Web Service** on [Render](https://render.com/).
+2. Connect your GitHub repository.
+3. Select **Docker** as the Environment.
+4. Add the following **Environment Variables**:
+   - `OPENAI_API_KEY`: Your OpenAI Secret Key
+   - `VITE_FIREBASE_API_KEY`: Your Firebase API Key
+   - `VITE_FIREBASE_AUTH_DOMAIN`: Firebase Auth Domain
+   - `VITE_FIREBASE_DATABASE_URL`: Firebase RTDB URL
+   - `VITE_FIREBASE_PROJECT_ID`: Firebase Project ID
+   - `VITE_FIREBASE_STORAGE_BUCKET`: Firebase Storage Bucket
+   - `VITE_FIREBASE_MESSAGING_SENDER_ID`: Firebase Sender ID
+   - `VITE_FIREBASE_APP_ID`: Firebase App ID
+5. Deploy! The Dockerfile will build the Vite frontend and serve it securely through the Flask backend automatically.
 
 ## 🛡️ Challenges & Technical Hurdles
 Building a real-time Venue OS presented several complex engineering challenges -
