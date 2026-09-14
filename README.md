@@ -2,7 +2,7 @@
 
 Stardium is an AI-powered commander designed for elite sporting events. It leverages the Google Cloud Ecosystem to provide real-time telemetry, authoritative AI redirects and secure fan engagement.
 
-🌐 **Live Demo** → https://stardium.onrender.com
+🌐 **Live Demo** → https://stardium-t6fa.onrender.com
 
 ## 🌌 Quick Glance
 <p align="center">
@@ -67,14 +67,14 @@ Stardium is configured for single-instance, multi-stage deployment using Docker.
 2. Connect your GitHub repository.
 3. Select **Docker** as the Environment.
 4. Add the following **Environment Variables**:
-   - `OPENAI_API_KEY`: Your OpenAI Secret Key
-   - `VITE_FIREBASE_API_KEY`: Your Firebase API Key
-   - `VITE_FIREBASE_AUTH_DOMAIN`: Firebase Auth Domain
-   - `VITE_FIREBASE_DATABASE_URL`: Firebase RTDB URL
-   - `VITE_FIREBASE_PROJECT_ID`: Firebase Project ID
-   - `VITE_FIREBASE_STORAGE_BUCKET`: Firebase Storage Bucket
-   - `VITE_FIREBASE_MESSAGING_SENDER_ID`: Firebase Sender ID
-   - `VITE_FIREBASE_APP_ID`: Firebase App ID
+   - `OPENAI_API_KEY` - Your OpenAI Secret Key.
+   - `VITE_FIREBASE_API_KEY` - Your Firebase API Key.
+   - `VITE_FIREBASE_AUTH_DOMAIN` - Firebase Auth Domain.
+   - `VITE_FIREBASE_DATABASE_URL` - Firebase RTDB URL.
+   - `VITE_FIREBASE_PROJECT_ID` - Firebase Project ID.
+   - `VITE_FIREBASE_STORAGE_BUCKET` - Firebase Storage Bucket.
+   - `VITE_FIREBASE_MESSAGING_SENDER_ID` - Firebase Sender ID.
+   - `VITE_FIREBASE_APP_ID` - Firebase App ID.
 5. Deploy! The Dockerfile will build the Vite frontend and serve it securely through the Flask backend automatically.
 
 ## 🛡️ Challenges & Technical Hurdles
@@ -84,7 +84,7 @@ Building a real-time Venue OS presented several complex engineering challenges -
 2.  **Inconsistent API Telemetry** - Live match data from external providers often lacks critical labels (like "Home" vs "Away") during the "Scheduled" phase. We developed a robust heuristic parsing layer to ensure high-fidelity UI rendering regardless of API quality.
 3.  **Real-Time Sync at Scale** - Synchronizing fan sentiment data from Firebase RTDB with sub-millisecond latency while maintaining low overhead on the client-side required optimized listeners and selective state updates.
 4.  **UI/UX Precision** - Balancing high-intensity cyberpunk aesthetics with perfect data alignment (e.g., the scoreboard optics) required custom CSS grid architectures and monospaced font treatments.
-   
+
 ## 🚀 Future Roadmap
 - **Multi-Stadium Swarm** - Orchestrate multiple venue dashboards from a single global HQ.
 - **Gemini Pro Vision** - Integrate live CCTV streams for real-time AI visual crowd counting.
